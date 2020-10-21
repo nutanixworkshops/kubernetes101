@@ -74,6 +74,7 @@ Installation of Minikube
 He follows the guide on https://kubernetes.io/docs/tasks/tools/install-minikube/ to install the environment. He follows the curl command to get the installation
 
 .. code-block:: bash 
+
     curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 \
     && chmod +x minikube
 

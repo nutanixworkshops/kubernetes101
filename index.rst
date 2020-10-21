@@ -30,7 +30,7 @@ Requirements
 John has been asked to investigate the following set requirements by the organization:
 
 - Use of the Docker images.
-- Changing the configuration should be outside of the container, if it can be done.
+- Changing the configuration of the webserver should be outside of the container, if it can be done.
 - Changes to configuration and the web application should not be lost in case of a restart/reboot of the container
 - A reboot of the host that serves the container should not impact the accessibility of the containerized web servers (read application).
 - Update to the images or configuration must have:
