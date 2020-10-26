@@ -80,12 +80,12 @@ He follows the guide on https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 as his laptop is Mac OS.
 
-And follows with the next command to make it possible to run the command **minikube** from the terminal without making any changes to the PATH variable **sudo mv minikube /usr/local/bin**.
+And follows with the next command to make it possible to run the command ``minikube`` from the terminal without making any changes to the PATH variable ``sudo mv minikube /usr/local/bin``.
 He types the password to get the sudo command to work.
 
 .. figure:: images/01.png
 
-To confirm the installation he runs **minikube start --driver=virtualbox** as he is using VirtualBox for the VM. 
+To confirm the installation he runs ``minikube start --driver=virtualbox*`` as he is using VirtualBox for the VM. 
 
 .. note:: 
     For other driver look here: https://kubernetes.io/docs/setup/learning-environment/minikube/#specifying-the-vm-driver
@@ -96,7 +96,7 @@ The "installer" downloaded an iso image for the minikube installation and create
 
 .. figure:: images/03.png
 
-He runs the **minikube status** command to see if the k8s single cluster is running.
+He runs the ``minikube status`` command to see if the k8s single cluster is running.
 
 .. figure:: images/04.png
 
@@ -105,8 +105,8 @@ He runs the **minikube status** command to see if the k8s single cluster is runn
 Interact with k8s cluster
 ***************************************
 
-John reads the document that he used to install minikube and reads that he needs to run **kubectl** to interact with the k8s minikube environment.
-He runs **kubectl get nodes** to see if he is able to connect and interact. Yes he gets a reply and sees a node. 
+John reads the document that he used to install minikube and reads that he needs to run ``kubectl`` to interact with the k8s minikube environment.
+He runs ``kubectl get nodes`` to see if he is able to connect and interact. Yes he gets a reply and sees a node. 
 
 .. figure:: images/05.png
 
@@ -114,17 +114,17 @@ Before he starts exploring, he wants to have something running, so he can see so
 
 Deployment of a test pod
 ***************************************
-He runs the mentioned command **kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10** to get a pod deployed to the minikube environment.
-After he runs the command he wants to see the status of the pods. To do this he runs **kubectl get deployments** and sees that, after rerunning the command again, the deployment has the AVAILABLE (1/1) status and is READY (1/1)
+He runs the mentioned command ``kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10`` to get a pod deployed to the minikube environment.
+After he runs the command he wants to see the status of the pods. To do this he runs ``kubectl get deployments`` and sees that, after rerunning the command again, the deployment has the AVAILABLE (1/1) status and is READY (1/1)
 
 .. figure:: images/06.png
 
-"Ok so the pod is running... But how do I interact with that?" Reading on in the article, he reads that the port needs to be exposed to the outside world by using **kubectl expose deployment hello-minikube --type=NodePort --port=8080** he runs that command to see what happens.
-Then he runs **kubectl get pod**s to get the status of the pods running.
+"Ok so the pod is running... But how do I interact with that?" Reading on in the article, he reads that the port needs to be exposed to the outside world by using ``kubectl expose deployment hello-minikube --type=NodePort --port=8080`` he runs that command to see what happens.
+Then he runs ``kubectl get pods`` to get the status of the pods running.
 
 .. figure:: images/07.png
 
-To see what this pod is doing he runs **minikube service hello-minikube --url** to get the url where the hello-world is running. He then opens the URL he got from the command using a browser and sees some information..
+To see what this pod is doing he runs ``minikube service hello-minikube --url`` to get the url where the hello-world is running. He then opens the URL he got from the command using a browser and sees some information..
 
 .. figure:: images/08.png
 
@@ -135,20 +135,20 @@ To see what this pod is doing he runs **minikube service hello-minikube --url** 
 Cleanup the installation test
 ***************************************
 
-"Ok let’s get all back to the installation phase… Cleaning up all created stuff, so I have a clean minikube environment to start testing..", John thinks.
+"Ok let’s get all back to the installation phase... Cleaning up all created stuff, so I have a clean minikube environment to start testing..", John thinks.
 He runs the following commands to clean up his minikube environment:
 
-- **kubectl delete service hello-minikube** ; to delete the exposed port
-- **kubectl delete deployment hello-minikube** ; to delete the deployment of the pod
-- **kubectl get service**; checking if the exposed port has been deleted
-- **kubectl get deployment**; checking to see if the deployment has been deleted.
+- ``kubectl delete service hello-minikube`` ; to delete the exposed port
+- ``kubectl delete deployment hello-minikube`` ; to delete the deployment of the pod
+- ``kubectl get service``; checking if the exposed port has been deleted
+- ``kubectl get deployment``; checking to see if the deployment has been deleted.
 
 .. figure:: images/10.png
 
-After a few seconds even the **kubectl get pods** is showing the "No resources found.." message. His minikube environment is clean and ready for testing tomorrow.
+After a few seconds even the ``kubectl get pods`` is showing the "No resources found.." message. His minikube environment is clean and ready for testing tomorrow.
 
 Stop the minikube environment
 ***************************************
-John is done for today and stops his minikube environment using the command **minikube stop**
+John is done for today and stops his minikube environment using the command ``minikube stop``
 
 .. figure:: images/11.png
